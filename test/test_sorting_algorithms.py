@@ -13,3 +13,13 @@ def test_sorting_algorithims_bubble_sort():
     assert sorting_algorithims.bubble_sort([10, 8, 48]) == [8, 10, 48]
     assert sorting_algorithims.bubble_sort([10, 8, 48, 1]) == [1, 8, 10, 48]
     assert sorting_algorithims.bubble_sort([-1, 2, 3, 4]) == [-1, 2, 3, 4]
+
+
+def test_sorting_algorithims_recursive_bubble_sort():
+    sorting_algorithims = SortingAlgorithms()
+    assert sorting_algorithims.recursive_bubble_sort([10, 8, 48]) == [
+        8, 10, 48]
+    assert sorting_algorithims.recursive_bubble_sort([10, 8, 48, 1]) == [
+        1, 8, 10, 48]
+    assert sorting_algorithims.recursive_bubble_sort(
+        [-1, 2, 3, 4]) == [-1, 2, 3, 4]

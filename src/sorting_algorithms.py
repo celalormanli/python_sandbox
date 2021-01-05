@@ -18,3 +18,15 @@ class SortingAlgorithms:
                     input_array[y] = input_array[y + 1]
                     input_array[y + 1] = temp
         return input_array
+
+    def recursive_bubble_sort(self, input_array, counter=None):
+        if counter is None:
+            counter = len(input_array)
+        if counter == 1:
+            return input_array
+        for x in range(counter - 1):
+            if input_array[x] > input_array[x + 1]:
+                input_array[x], input_array[x + \
+                    1] = input_array[x + 1], input_array[x]
+        self.recursive_bubble_sort(input_array, (counter - 1))
+        return input_array
