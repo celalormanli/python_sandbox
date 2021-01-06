@@ -26,7 +26,18 @@ class SortingAlgorithms:
             return input_array
         for x in range(counter - 1):
             if input_array[x] > input_array[x + 1]:
-                input_array[x], input_array[x + \
-                    1] = input_array[x + 1], input_array[x]
+                input_array[x], input_array[x +
+                                            1] = input_array[x + 1],\
+                    input_array[x]
         self.recursive_bubble_sort(input_array, (counter - 1))
+        return input_array
+
+    def insertion_sort(self, input_array):
+        for x in range(1, len(input_array)):
+            key = input_array[x]
+            y = x - 1
+            while y >= 0 and key < input_array[y]:
+                input_array[y + 1] = input_array[y]
+                y = y - 1
+            input_array[y + 1] = key
         return input_array
