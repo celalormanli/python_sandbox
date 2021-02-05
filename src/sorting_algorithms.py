@@ -1,3 +1,4 @@
+from heapq import heappop, heappush
 class SortingAlgorithms:
     def selection_short(self, input_array):
         for x in range(len(input_array)):
@@ -41,3 +42,12 @@ class SortingAlgorithms:
                 y = y - 1
             input_array[y + 1] = key
         return input_array
+
+    def heap_sort(self, input_array):
+        heap = []
+        for x in input_array:
+            heappush(heap, x)
+        sort=[]
+        while heap:
+            sort.append(heappop(heap))
+        return sort

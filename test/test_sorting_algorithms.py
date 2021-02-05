@@ -33,3 +33,12 @@ def test_sorting_algorithims_insertion_sort():
         1, 8, 10, 48]
     assert sorting_algorithims.insertion_sort(
         [-1, 2, 3, 4]) == [-1, 2, 3, 4]
+
+def test_sorting_algorithims_heap_sort():
+    sorting_algorithims = SortingAlgorithms()
+    assert sorting_algorithims.heap_sort([10, 8, 48]) == [
+        8, 10, 48]
+    assert sorting_algorithims.heap_sort([10, 8, 48, 1]) == [
+        1, 8, 10, 48]
+    assert sorting_algorithims.heap_sort(
+        [-1, 2, 3, 4]) == [-1, 2, 3, 4]
