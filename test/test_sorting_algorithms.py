@@ -34,6 +34,7 @@ def test_sorting_algorithims_insertion_sort():
     assert sorting_algorithims.insertion_sort(
         [-1, 2, 3, 4]) == [-1, 2, 3, 4]
 
+
 def test_sorting_algorithims_heap_sort():
     sorting_algorithims = SortingAlgorithms()
     assert sorting_algorithims.heap_sort([10, 8, 48]) == [
