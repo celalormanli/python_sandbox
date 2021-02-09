@@ -17,3 +17,16 @@ class SearchingAlgorithms:
                 ri = mid - 1
 
         return False
+
+    def depth_first_search(self, graph, start):
+        stack = []
+        visited = []
+        stack.append(start)
+        while len(stack) > 0:
+            node = stack.pop()
+            if node not in visited:
+                visited.append(node)
+                neighbourss = graph[node]
+                for neighbour in neighbourss:
+                    stack.append(neighbour)
+        return visited

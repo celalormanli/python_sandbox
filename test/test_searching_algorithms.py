@@ -13,3 +13,16 @@ def test_binary_search():
         [8, 13, 58, 96, 101], 0, 4, 5) is False
     assert searching_algorithms.binary_search(
         [8, 13, 58, 96, 101], 0, 4, 96) is True
+
+
+def test_depth_first_search():
+    graph = {'A': ['B', 'E'],
+             'B': ['D', 'C'],
+             'C': ['B', 'D'],
+             'D': ['B', 'C'],
+             'E': ['F'],
+             'F': []}
+    searching_algorithms = SearchingAlgorithms()
+    visited = []
+    visited = searching_algorithms.depth_first_search(graph, 'A')
+    assert visited == ['A', 'E', 'F', 'B', 'C', 'D']
