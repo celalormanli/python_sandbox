@@ -26,3 +26,16 @@ def test_depth_first_search():
     visited = []
     visited = searching_algorithms.depth_first_search(graph, 'A')
     assert visited == ['A', 'E', 'F', 'B', 'C', 'D']
+
+
+def test_breadth_first_search():
+    graph = {'A': ['B', 'E'],
+             'B': ['D', 'C'],
+             'C': ['B', 'D'],
+             'D': ['B', 'C'],
+             'E': ['F'],
+             'F': []}
+    searching_algorithms = SearchingAlgorithms()
+    visited = []
+    visited = searching_algorithms.breadth_first_search(graph, 'A')
+    assert visited == ['A', 'B', 'E', 'D', 'C', 'F']

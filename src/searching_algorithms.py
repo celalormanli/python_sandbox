@@ -30,3 +30,16 @@ class SearchingAlgorithms:
                 for neighbour in neighbourss:
                     stack.append(neighbour)
         return visited
+
+    def breadth_first_search(self, graph, start):
+        visited = []
+        queue = []
+        queue.append(start)
+        while len(queue) > 0:
+            node = queue.pop(0)
+            if node not in visited:
+                visited.append(node)
+                neighbours = graph[node]
+                for neighbour in neighbours:
+                    queue.append(neighbour)
+        return visited
