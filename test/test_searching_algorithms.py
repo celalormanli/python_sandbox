@@ -39,3 +39,14 @@ def test_breadth_first_search():
     visited = []
     visited = searching_algorithms.breadth_first_search(graph, 'A')
     assert visited == ['A', 'B', 'E', 'D', 'C', 'F']
+
+
+def test_jump_search():
+    searching_algorithms = SearchingAlgorithms()
+    input_array = [0, 1, 1, 2, 3, 5,
+                   8, 13, 21, 34, 55,
+                   89, 144, 233, 377, 610]
+    index = searching_algorithms.jump_search(input_array, 21)
+    assert index == 8
+    index = searching_algorithms.jump_search(input_array, 22)
+    assert index == -1

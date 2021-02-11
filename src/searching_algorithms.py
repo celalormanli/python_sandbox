@@ -1,3 +1,6 @@
+import math
+
+
 class SearchingAlgorithms:
     def linear_search(self, input_array, searched_element):
         for x in input_array:
@@ -43,3 +46,20 @@ class SearchingAlgorithms:
                 for neighbour in neighbours:
                     queue.append(neighbour)
         return visited
+
+    def jump_search(self, input_array, x):
+        n = len(input_array)
+        step = math.sqrt(n)
+        prev = 0
+        while input_array[int(min(step, n) - 1)] < x:
+            prev = step
+            step = step+math.sqrt(n)
+            if prev > n:
+                return -1
+        while input_array[int(prev)] < x:
+            prev = prev + 1
+            if prev == min(step, n):
+                return -1
+        if input_array[int(prev)] == x:
+            return int(prev)
+        return -1
